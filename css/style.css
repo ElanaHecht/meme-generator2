@@ -104,13 +104,13 @@ h3 {
 .gallery-grid img {
    cursor: pointer;
    border-radius: 20px;
-   width: 300px;
+   width: 250px;
 }
 
 .gallery-grid {
    display: grid;
    gap: 10px 10px;
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    margin-bottom: 50px;
 }
 
@@ -133,52 +133,98 @@ h3 {
    gap: 20px 20px;
 }
 
-.controller-grid input {
-   grid-column: 1/6;
+button img {
+   object-fit: contain;
 }
 
-.select-text {
+.controller-grid input {
+   grid-column: 1/6;
+   border: transparent;
+   border-radius: 1rem;
+   font-family: Montserrat Regular;
+   padding-left: 1.8rem;
+   font-size: 2rem;
+}
+
+.choose-text {
    grid-column: 1/2;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .text-up {
    grid-column: 2/3;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .text-down {
    grid-column: 3/4;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .add-text {
    grid-column: 4/5;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .remove-text {
    grid-column: 5/6;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .text-increase {
    grid-column: 1/2;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .text-decrease {
    grid-column: 2/3;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .align-left {
    grid-column: 3/4;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .align-center {
    grid-column: 4/5;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 .align-right {
    grid-column: 5/6;
+   border: transparent;
+   border-radius: 1rem;
 }
 
 select {
    grid-column: 1/4;
+   border: transparent;
+   border-radius: 1rem;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   font-family: Montserrat Regular;
+   padding-left: 1.8rem;
+   font-size: 2rem;
+}
+
+select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   color: black;
 }
 
 #fill.color-fill {
@@ -196,5 +242,4 @@ select {
 
 .footer-container {
    padding: 50px 0 50px 0;
-
 }
