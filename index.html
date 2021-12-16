@@ -50,38 +50,29 @@
               oninput="setLineTxt()"
             />
 
-            <button class="select-text" onclick="onSelectLine()">⬆️⬇️</button>
+            <button class="choose-text" onclick="onSelectLine()"><img src="./icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="trash"></button>
             <button class="text-up" onclick="onMoveLine(-5)">⬆</button>
             <button class="text-down" onclick="onMoveLine(5)">⬇</button>
-            <button class="add-text" onclick="onAddText()">➕</button>
-            <button class="remove-text" onclick="onRemoveText()">🗑️</button>
-            <button class="text-increase" onclick="onIncreaseTextSize(this)">
-              A+
-            </button>
+            <button class="add-text" onclick="onAddText()"><img src="./icons/add.png" alt="plus-sign"></button>
+            <button class="remove-text" onclick="onRemoveText()"><img src="./icons/trash.png" alt="trash"></button>
+            <button class="text-increase" onclick="onIncreaseTextSize(this)"><img src="./icons/increase font - icon.png" alt="font-plus"></button>
             <button class="text-decrease" onclick="onDecreaseTextSize(this)">
-              A-
-            </button>
+             <img src="./icons/decrease font - icon.png" alt="font-minus"></button>
             <button
               class="align-left"
               id="align-left"
               onclick="onTextAlign(this)"
-            >
-              left
-            </button>
+            ><img src="./icons/align-to-left.png" alt="align-left"> </button>
             <button
               class="align-center"
               id="align-center"
               onclick="onTextAlign(this)"
-            >
-              center
-            </button>
+            ><img src="./icons/center-text-alignment.png" alt="align-center"></button>
             <button
               class="align-right"
               id="align-right"
               onclick="onTextAlign(this)"
-            >
-              right
-            </button>
+            ><img src="./icons/align-to-right.png" alt="align-right"></button>
             <select
               name="select-font"
               id="selected"
