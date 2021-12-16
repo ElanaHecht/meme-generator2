@@ -1,0 +1,200 @@
+* {
+   box-sizing: border-box;
+}
+
+/* FONTS */
+
+@font-face {
+   font-family: Montserrat Regular;
+   src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+   font-family: Montserrat Medium;
+   src: url(/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+   font-family: Montserrat Thin;
+   src: url(/fonts/Montserrat/Montserrat-Thin.ttf);
+}
+
+@font-face {
+   font-family: impact;
+   src: url(/fonts/impact.ttf);
+}
+
+@font-face {
+   font-family: Kanit;
+   src: url(/fonts/Kanit-ExtraBold.ttf);
+}
+
+/* BASICS */
+
+html {
+   color: #fff;
+   max-width: 100%
+}
+
+body {
+   margin: 0;
+   font-family: Montserrat Regular, sans-serif;
+   font-size: 1rem;
+   background-color: #e3e3e3;
+}
+
+header {
+   background-color: #ff7f00;
+   margin-bottom: 50px;
+}
+
+canvas {
+   background-color: #fff;
+}
+
+h3 {
+   font-family: Montserrat Regular, sans-serif;
+   font-size: 1em;
+}
+
+/* LAYOUT */
+
+.main-layout {
+   max-width: 1080px;
+   margin: 0 auto;
+
+}
+
+/* HEADER */
+
+.header-container {
+   height: 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.main-header img {
+   object-fit: contain;
+   height: 1.9rem;
+}
+
+.main-nav ul {
+   display: flex;
+   list-style-type: none;
+   font-size: 1.5rem;
+}
+
+.main-nav a {
+   padding: 0 15px 0 15px;
+   text-decoration: none;
+   color: #fff;
+   border-right: 1px solid #8a8a8a;
+}
+
+.main-nav .about {
+   border-right: none;
+}
+
+/* GALLERY */
+.first-area {
+   display: block;
+}
+
+.gallery-grid img {
+   cursor: pointer;
+   border-radius: 20px;
+   width: 300px;
+}
+
+.gallery-grid {
+   display: grid;
+   gap: 10px 10px;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   margin-bottom: 50px;
+}
+
+/* MEME */
+.second-area {
+   display: none;
+}
+
+.meme-generator {
+   display: flex;
+   align-items: center;
+}
+
+.controller-grid {
+   height: 500px;
+   padding-left: 50px;
+   display: grid;
+   grid-template-rows: repeat(5, 1fr);
+   grid-template-columns: repeat(5, 1fr);
+   gap: 20px 20px;
+}
+
+.controller-grid input {
+   grid-column: 1/6;
+}
+
+.select-text {
+   grid-column: 1/2;
+}
+
+.text-up {
+   grid-column: 2/3;
+}
+
+.text-down {
+   grid-column: 3/4;
+}
+
+.add-text {
+   grid-column: 4/5;
+}
+
+.remove-text {
+   grid-column: 5/6;
+}
+
+.text-increase {
+   grid-column: 1/2;
+}
+
+.text-decrease {
+   grid-column: 2/3;
+}
+
+.align-left {
+   grid-column: 3/4;
+}
+
+.align-center {
+   grid-column: 4/5;
+}
+
+.align-right {
+   grid-column: 5/6;
+}
+
+select {
+   grid-column: 1/4;
+}
+
+#fill.color-fill {
+   grid-column: 4/5;
+}
+
+
+/* FOOTER */
+.main-footer {
+   position: sticky;
+   background-color: #ff7f00;
+   margin: 50px 0 0 0;
+   text-align: center;
+}
+
+.footer-container {
+   padding: 50px 0 50px 0;
+
+}
