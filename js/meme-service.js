@@ -6,7 +6,7 @@ var gMeme = {
    selectedLineIdx: 0,
    lines: [
       _createLine(50),
-      _createLine(450)
+      _createLine(400)
    ]
 }
 

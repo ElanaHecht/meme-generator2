@@ -8,39 +8,42 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body onload="onGalleryInit()">
+        <div class="main-screen" onclick="toggleMenu()"></div>
     <header class="main-header">
       <div class="header-container main-layout">
-        <img class="header-logo" src="logo/Layer 2.png" alt="logo" />
+        <img class="header-logo" src="logo/Layer 2@2x.png" alt="logo" />
         <nav class="main-nav">
-          <div class="nav-container">
-            <ul>
-              <li><a href="#" onclick="onNavClick('first')">Gallery</a></li>
-              <li><a href="#" onclick="onNavClick('third')">Memes</a></li>
-              <li><a class="about" href="#">About</a></li>
-            </ul>
-          </div>
+          <ul class="nav-container">
+            <img class="mobile-logo" src="logo/Layer 2@2x.png" alt="logo" />
+            <li><a href="#" onclick="onNavClick('first')">Gallery</a></li>
+            <li><a class="memes-link" href="#" onclick="onNavClick('third')">Memes</a></li>
+            <li><a href="#about" onclick="onNavScroll(this)">About</a></li>
+          </ul>
         </nav>
+        <button class="btn-menu" onclick="toggleMenu()">☰</button>
       </div>
     </header>
 
+    <main class="main-content1">
     <section class="first-area main-layout">
-      <main class="main-content1">
-        <input type="text" list="search" id="search-input" />
-        <datalist type="text" id="search"> </datalist>
+        <input type="text" list="search" id="search-input" placeholder="Type keyword"/>
+        <datalist type="text" id="search"></datalist>
         <button class="search-button" onclick="onFilterGallery()">
-          Search
+          <img src="./icons/search-icon.png" alt="magnifying-glass">
         </button>
         <div class="gallery">
           <div class="gallery-grid"></div>
         </div>
-      </main>
-    </section>
+      </section>
+    </main>
 
-    <section class="second-area main-layout">
-      <main class="main-content2">
+      <div id="about">
+
+    <main class="main-content2">
+        <section class="second-area main-layout">
         <div class="meme-generator">
           <div class="canvas-container">
-            <canvas id="meme-canvas" height="500" width="500"> </canvas>
+            <canvas id="meme-canvas" height="450" width="450"> </canvas>
           </div>
           <div class="controller-grid">
             <input
@@ -51,8 +54,8 @@
             />
 
             <button class="choose-text" onclick="onSelectLine()"><img src="./icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="trash"></button>
-            <button class="text-up" onclick="onMoveLine(-5)">⬆</button>
-            <button class="text-down" onclick="onMoveLine(5)">⬇</button>
+            <button class="text-up" onclick="onMoveLine(-5)"><img src="./icons/move-text-up.png" alt="raise-text"></button>
+            <button class="text-down" onclick="onMoveLine(5)"><img src="./icons/move-text-down.png" alt="lower-text"></button>
             <button class="add-text" onclick="onAddText()"><img src="./icons/add.png" alt="plus-sign"></button>
             <button class="remove-text" onclick="onRemoveText()"><img src="./icons/trash.png" alt="trash"></button>
             <button class="text-increase" onclick="onIncreaseTextSize(this)"><img src="./icons/increase font - icon.png" alt="font-plus"></button>
@@ -81,36 +84,64 @@
               <option value="impact" selected>Impact</option>
               <option value="Kanit">Kanit</option>
             </select>
-            <div class="color">
+            <div class="color-fill">
               <input
                 type="color"
                 id="fill-color"
                 value="#ffffff"
                 oninput="onSelectFill()"
               />
+            </div>
+            <div class="color-stroke">
               <input
                 type="color"
                 id="stroke-color"
                 class="stroke"
                 oninput="onSelectStroke()"
               />
+              </div>
+              <button class="save" onclick="onSaveMeme()">Save Meme</button>
+              <button class="download"><a href="#" onclick="onDownloadMeme(this)" download="myphoto">Download Meme</a></button>
             </div>
-            <button class="save" onclick="onSaveMeme()">Save Meme</button>
-          </div>
         </div>
       </main>
     </section>
 
+    <main class="main-content3">
     <section class="third-area main-layout">
-      <main class="main-content3">
-        <div class="completed-memes"></div>
+        <div class="completed-memes main-layout"></div>
       </main>
     </section>
 
+     <section class="about-area">
+        <div class="info main-layout">
+          <h1>HELLO</h1>
+        <img class="info-image" src="about.jpg" alt="Elana Hecht">
+        <div class="info-text">
+        <h2>Elana Hecht</h2>
+        <p>Elana Hecht is a fictional character, one of the six main characters who appears on the American sitcom Friends (1994–2004). Created by David Crane and Marta Kauffman</p>
+      </div>
+      </div>
+<div class="social-sec">
+        <ul class="social-nav">
+          <li><a class="linkedin" href="https://www.linkedin.com/in/elana-hecht-4bb05166/">
+            <img src="./icons/linkedin-logo.png" alt="linkedin-logo">
+          </a></li>
+          <li><a class="facebook" href="https://www.facebook.com/elana.hecht">
+            <img src="./icons/facebook-logo copy 2.png" alt="facebook-logo">
+          </a></li>
+          <li><a class="github" href="https://github.com/ElanaHecht">
+            <img src="./icons/github-logo.png" alt="github-logo">
+          </a></li>
+        </ul>
+        </div>
+      </div>
+  </section>
+
     <footer class="main-footer">
       <div class="footer-container main-layout">
-        <img class="footer-logo" src="logo/Layer 2@2x.png" alt="logo" />
-        <h3>all rights reserved 2021</h3>
+        <img class="footer-logo" src="logo/Layer 2.png" alt="logo" />
+        <h4>all rights reserved 2021</h4>
       </div>
     </footer>
 

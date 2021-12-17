@@ -66,6 +66,12 @@ function onMoveLine(dy){
    renderMeme();
 }
 
+function onDownloadMeme(elBtn){
+   const data = gCanvas.toDataURL();
+   elBtn.href = data;
+   elBtn.download = 'my-meme';
+}
+
 function onSaveMeme(){
    appendMeme(gMeme);
 }
