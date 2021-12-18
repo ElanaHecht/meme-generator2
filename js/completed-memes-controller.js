@@ -8,7 +8,7 @@ function appendMeme(meme) {
    memeCanvas.height = 500;
    document.querySelector('.completed-memes').appendChild(memeCanvas);
    var ctx = memeCanvas.getContext('2d');
-   createMemeImage(meme, memeCanvas.width, memeCanvas.height, ctx);
+   createMemeImage(meme, memeCanvas.width, memeCanvas.height, ctx, false);
    gCompletedMemes.push(meme);
    _saveMemesToStorage();
 }

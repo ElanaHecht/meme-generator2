@@ -24,7 +24,7 @@
       </div>
     </header>
 
-    <main class="main-content1">
+    <main class="main-first">
     <section class="first-area main-layout">
         <input type="text" list="search" id="search-input" placeholder="Type keyword"/>
         <datalist type="text" id="search"></datalist>
@@ -39,7 +39,7 @@
 
       <div id="about">
 
-    <main class="main-content2">
+    <main class="main-second">
         <section class="second-area main-layout">
         <div class="meme-generator">
           <div class="canvas-container">
@@ -84,22 +84,25 @@
               <option value="impact" selected>Impact</option>
               <option value="Kanit">Kanit</option>
             </select>
-            <div class="color-fill">
-              <input
+              <button class="color-fill">
+                <img src="./icons/paint-board-and-brush.png" alt="text-fill">
+                <input
                 type="color"
                 id="fill-color"
                 value="#ffffff"
                 oninput="onSelectFill()"
-              />
-            </div>
-            <div class="color-stroke">
+                />
+              </button>
+            
+            <button class="color-stroke">
+              <img src="./icons/text stroke.png" alt="text-stroke">
               <input
                 type="color"
                 id="stroke-color"
                 class="stroke"
                 oninput="onSelectStroke()"
               />
-              </div>
+            </button>
               <button class="save" onclick="onSaveMeme()">Save Meme</button>
               <button class="download"><a href="#" onclick="onDownloadMeme(this)" download="myphoto">Download Meme</a></button>
             </div>
@@ -107,7 +110,7 @@
       </main>
     </section>
 
-    <main class="main-content3">
+    <main class="main-third">
     <section class="third-area main-layout">
         <div class="completed-memes main-layout"></div>
       </main>
@@ -119,7 +122,7 @@
         <img class="info-image" src="about.jpg" alt="Elana Hecht">
         <div class="info-text">
         <h2>Elana Hecht</h2>
-        <p>Elana Hecht is a fictional character, one of the six main characters who appears on the American sitcom Friends (1994–2004). Created by David Crane and Marta Kauffman</p>
+        <p>Elana Hecht is an amazing full-stack developer. She likes going to the beach and hanging out with her family or friends. Now stop reading and enjoy making some memes!</p>
       </div>
       </div>
 <div class="social-sec">

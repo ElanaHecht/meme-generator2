@@ -128,7 +128,6 @@ function setKeywordCount() {
 function onImgSelect(elImg) {
    setImg(elImg.id);
    onNavClick('second');
-   document.querySelector('.about-area').style.display = 'none';
    toggleMenu();
 }
 

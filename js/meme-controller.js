@@ -5,14 +5,14 @@ var gCanvas;
 var gCtx;
 
 function onMemeInit() {
-   gCanvas = document.querySelector('#meme-canvas');
+   gCanvas = document.getElementById('meme-canvas');
    gCtx = gCanvas.getContext('2d');
    renderMeme();
 }
 
 function renderMeme() {
    var meme = getMeme();
-   createMemeImage(meme, gCanvas.width, gCanvas.height, gCtx);
+   createMemeImage(meme, gCanvas.width, gCanvas.height, gCtx, true);
 }
 
 function onSelectFont(font) {
