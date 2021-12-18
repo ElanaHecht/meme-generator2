@@ -49,7 +49,7 @@ body {
 
 header {
    background-color: #ff7f00;
-   margin-bottom: 30px;
+   margin-bottom: 50px;
 }
 
 main {
@@ -161,7 +161,6 @@ h4 {
 .about-area {
    display: none;
    padding: 50px;
-   margin-top: 50px;
    background-color: #fff;
 }
 
@@ -460,6 +459,10 @@ body.menu-open .main-screen {
       max-width: 800px;
    }
 
+   header {
+      margin-bottom: 80px;
+   }
+
    .header-container {
       height: 100px;
       display: flex;
@@ -506,7 +509,7 @@ body.menu-open .main-screen {
    .meme-generator {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 40px;
    }
 
    .controller-grid {
@@ -538,7 +541,6 @@ body.menu-open .main-screen {
    }
 
    .main-footer {
-      margin-top: 148px;
       margin-bottom: 0;
    }
 
@@ -553,6 +555,10 @@ body.menu-open .main-screen {
 
    body {
       font-size: 1rem;
+   }
+
+   header {
+      margin-bottom: 50px;
    }
 
    .main-layout {
@@ -598,7 +604,4 @@ body.menu-open .main-screen {
       border: 0.5px solid rgb(170, 170, 170);
    }
 
-   .main-footer {
-      margin-top: 108px;
-   }
 }

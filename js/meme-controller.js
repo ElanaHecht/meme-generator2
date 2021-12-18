@@ -74,6 +74,7 @@ function onDownloadMeme(elBtn){
 
 function onSaveMeme(){
    appendMeme(gMeme);
+   onNavClick('third');
 }
 
 // function onDownloadMeme(elBtn) {

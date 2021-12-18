@@ -15,9 +15,9 @@
         <nav class="main-nav">
           <ul class="nav-container">
             <img class="mobile-logo" src="logo/Layer 2@2x.png" alt="logo" />
-            <li><a href="#" onclick="onNavClick('first')">Gallery</a></li>
+            <li><a class="gallery-link" href="#" onclick="onNavClick('first')">Gallery</a></li>
             <li><a class="memes-link" href="#" onclick="onNavClick('third')">Memes</a></li>
-            <li><a href="#about" onclick="onNavScroll(this)">About</a></li>
+            <li><a class="about-link" href="#about" onclick="onNavClick('first')">About</a></li>
           </ul>
         </nav>
         <button class="btn-menu" onclick="toggleMenu()">☰</button>
@@ -35,9 +35,33 @@
           <div class="gallery-grid"></div>
         </div>
       </section>
+      <div id="about">
+             <section class="about-area">
+        <div class="info main-layout">
+          <h1>HELLO</h1>
+        <img class="info-image" src="about.jpg" alt="Elana Hecht">
+        <div class="info-text">
+        <h2>Elana Hecht</h2>
+        <p>Elana Hecht is an amazing full-stack developer. She likes going to the beach and hanging out with her family or friends. Now stop reading and enjoy making some memes!</p>
+      </div>
+      </div>
+<div class="social-sec">
+        <ul class="social-nav">
+          <li><a class="linkedin" href="https://www.linkedin.com/in/elana-hecht-4bb05166/">
+            <img src="./icons/linkedin-logo.png" alt="linkedin-logo">
+          </a></li>
+          <li><a class="facebook" href="https://www.facebook.com/elana.hecht">
+            <img src="./icons/facebook-logo copy 2.png" alt="facebook-logo">
+          </a></li>
+          <li><a class="github" href="https://github.com/ElanaHecht">
+            <img src="./icons/github-logo.png" alt="github-logo">
+          </a></li>
+        </ul>
+        </div>
+      </div>
+  </section>
     </main>
 
-      <div id="about">
 
     <main class="main-second">
         <section class="second-area main-layout">
@@ -82,7 +106,7 @@
               onchange="onSelectFont(this.value)"
             >
               <option value="impact" selected>Impact</option>
-              <option value="Kanit">Kanit</option>
+              <option value="kanit">Kanit</option>
             </select>
               <button class="color-fill">
                 <img src="./icons/paint-board-and-brush.png" alt="text-fill">
@@ -115,31 +139,6 @@
         <div class="completed-memes main-layout"></div>
       </main>
     </section>
-
-     <section class="about-area">
-        <div class="info main-layout">
-          <h1>HELLO</h1>
-        <img class="info-image" src="about.jpg" alt="Elana Hecht">
-        <div class="info-text">
-        <h2>Elana Hecht</h2>
-        <p>Elana Hecht is an amazing full-stack developer. She likes going to the beach and hanging out with her family or friends. Now stop reading and enjoy making some memes!</p>
-      </div>
-      </div>
-<div class="social-sec">
-        <ul class="social-nav">
-          <li><a class="linkedin" href="https://www.linkedin.com/in/elana-hecht-4bb05166/">
-            <img src="./icons/linkedin-logo.png" alt="linkedin-logo">
-          </a></li>
-          <li><a class="facebook" href="https://www.facebook.com/elana.hecht">
-            <img src="./icons/facebook-logo copy 2.png" alt="facebook-logo">
-          </a></li>
-          <li><a class="github" href="https://github.com/ElanaHecht">
-            <img src="./icons/github-logo.png" alt="github-logo">
-          </a></li>
-        </ul>
-        </div>
-      </div>
-  </section>
 
     <footer class="main-footer">
       <div class="footer-container main-layout">
