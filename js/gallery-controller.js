@@ -104,6 +104,7 @@ function onGalleryInit() {
       document.getElementById('search').appendChild(option)
    }
    document.querySelector('.about-area').style.display = 'block';
+   onNavClick('first');
 }
 
 function renderGallery(keyword) {
@@ -139,3 +140,37 @@ function onFilterGallery() {
 function toggleMenu() {
    document.body.classList.toggle('menu-open');
 }
+
+// function uploadImg(canvas) {
+//    const imgDataUrl = canvas.toDataURL("image/jpeg");
+
+//    function onSuccess(uploadedImgUrl) {
+//       const encodedUploadedImgUrl = encodeURIComponent;
+//       document.querySelector('.user-msg').innerText = `Your photo is available here: ${uploadedImgUrl}`
+
+//       document.querySelector('.share-container').innerHTML = `
+//         <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
+//            Share   
+//         </a>`
+//    }
+//    doUploadImg(imgDataUrl, onSuccess);
+// }
+
+// function doUploadImg(imgDataUrl, onSuccess) {
+
+//    const formData = new FormData();
+//    formData.append('img', imgDataUrl)
+
+//    fetch('//ca-upload.com/here/upload.php', {
+//       method: 'POST',
+//       body: formData
+//    })
+//       .then(res => res.text())
+//       .then((url) => {
+//          console.log('Got back live url:', url);
+//          onSuccess(url)
+//       })
+//       .catch((err) => {
+//          console.error(err)
+//       })
+// }

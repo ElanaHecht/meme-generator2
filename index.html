@@ -15,9 +15,9 @@
         <nav class="main-nav">
           <ul class="nav-container">
             <img class="mobile-logo" src="logo/Layer 2@2x.png" alt="logo" />
-            <li><a class="gallery-link" href="#" onclick="onNavClick('first')">Gallery</a></li>
-            <li><a class="memes-link" href="#" onclick="onNavClick('third')">Memes</a></li>
-            <li><a class="about-link" href="#about" onclick="onNavClick('first')">About</a></li>
+            <li><a id="first" class="active" href="#" onclick="onNavClick('first')">Gallery</a></li>
+            <li><a id="third" href="#" onclick="onNavClick('third')">Memes</a></li>
+            <li><a href="#about" onclick="onNavClick('first')">About</a></li>
           </ul>
         </nav>
         <button class="btn-menu" onclick="toggleMenu()">☰</button>
@@ -29,10 +29,11 @@
         <input type="text" list="search" id="search-input" placeholder="Type keyword"/>
         <datalist type="text" id="search"></datalist>
         <button class="search-button" onclick="onFilterGallery()">
-          <img src="./icons/search-icon.png" alt="magnifying-glass">
+          <img src="icons/search-icon.png" alt="magnifying-glass">
         </button>
         <div class="gallery">
-          <div class="gallery-grid"></div>
+          <div class="gallery-grid">
+          </div>
         </div>
       </section>
       <div id="about">
@@ -48,13 +49,13 @@
 <div class="social-sec">
         <ul class="social-nav">
           <li><a class="linkedin" href="https://www.linkedin.com/in/elana-hecht-4bb05166/">
-            <img src="./icons/linkedin-logo.png" alt="linkedin-logo">
+            <img src="icons/linkedin-logo.png" alt="linkedin-logo">
           </a></li>
           <li><a class="facebook" href="https://www.facebook.com/elana.hecht">
-            <img src="./icons/facebook-logo copy 2.png" alt="facebook-logo">
+            <img src="icons/facebook-logo copy 2.png" alt="facebook-logo">
           </a></li>
           <li><a class="github" href="https://github.com/ElanaHecht">
-            <img src="./icons/github-logo.png" alt="github-logo">
+            <img src="icons/github-logo.png" alt="github-logo">
           </a></li>
         </ul>
         </div>
@@ -77,29 +78,29 @@
               oninput="setLineTxt()"
             />
 
-            <button class="choose-text" onclick="onSelectLine()"><img src="./icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="trash"></button>
+            <button class="choose-text" onclick="onSelectLine()"><img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="trash"></button>
             <button class="text-up" onclick="onMoveLine(-5)"><img src="./icons/move-text-up.png" alt="raise-text"></button>
             <button class="text-down" onclick="onMoveLine(5)"><img src="./icons/move-text-down.png" alt="lower-text"></button>
             <button class="add-text" onclick="onAddText()"><img src="./icons/add.png" alt="plus-sign"></button>
             <button class="remove-text" onclick="onRemoveText()"><img src="./icons/trash.png" alt="trash"></button>
             <button class="text-increase" onclick="onIncreaseTextSize(this)"><img src="./icons/increase font - icon.png" alt="font-plus"></button>
             <button class="text-decrease" onclick="onDecreaseTextSize(this)">
-             <img src="./icons/decrease font - icon.png" alt="font-minus"></button>
+             <img src="icons/decrease font - icon.png" alt="font-minus"></button>
             <button
               class="align-left"
               id="align-left"
               onclick="onTextAlign(this)"
-            ><img src="./icons/align-to-left.png" alt="align-left"> </button>
+            ><img src="icons/align-to-left.png" alt="align-left"> </button>
             <button
               class="align-center"
               id="align-center"
               onclick="onTextAlign(this)"
-            ><img src="./icons/center-text-alignment.png" alt="align-center"></button>
+            ><img src="icons/center-text-alignment.png" alt="align-center"></button>
             <button
               class="align-right"
               id="align-right"
               onclick="onTextAlign(this)"
-            ><img src="./icons/align-to-right.png" alt="align-right"></button>
+            ><img src="icons/align-to-right.png" alt="align-right"></button>
             <select
               name="select-font"
               id="selected"
@@ -109,7 +110,7 @@
               <option value="kanit">Kanit</option>
             </select>
               <button class="color-fill">
-                <img src="./icons/paint-board-and-brush.png" alt="text-fill">
+                <img src="icons/paint-board-and-brush.png" alt="text-fill">
                 <input
                 type="color"
                 id="fill-color"
@@ -119,7 +120,9 @@
               </button>
             
             <button class="color-stroke">
-              <img src="./icons/text stroke.png" alt="text-stroke">
+              <label for="color">
+              <img src="icons/text stroke.png" alt="text-stroke">
+              </label>
               <input
                 type="color"
                 id="stroke-color"
@@ -127,8 +130,10 @@
                 oninput="onSelectStroke()"
               />
             </button>
-              <button class="save" onclick="onSaveMeme()">Save Meme</button>
-              <button class="download"><a href="#" onclick="onDownloadMeme(this)" download="myphoto">Download Meme</a></button>
+              <button class="save" onclick="onSaveMeme()">Save</button>
+              <button class="share" onclick="onShareMeme()">Share</button>
+              <button class="download"><a href="#" onclick="onDownloadMeme(this)" download="myphoto">Download</a></button>
+            </button>
             </div>
         </div>
       </main>
@@ -136,7 +141,16 @@
 
     <main class="main-third">
     <section class="third-area main-layout">
-        <div class="completed-memes main-layout"></div>
+        <div class="completed-memes main-layout">
+          <h2 class="non-saved">Sorry... You haven't saved any memes yet.</h2>
+        </div>
+        <p class="user-msg"></p>
+        <div id="saved-modal"><span class="close-button" onclick="onCloseModal()">&times;</span>
+          <button class="modal-remove" onclick="onRemoveCompletedMeme()">Remove</button>
+          <button class="modal-share" onclick="onShareCompletedMeme()">Share</button>
+          <button class="modal-download"><a href="#" onclick="onCompletedMemeDownload()" download="myphoto">Download</a>
+          </button>
+        </div>
       </main>
     </section>
 

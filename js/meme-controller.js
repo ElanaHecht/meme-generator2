@@ -67,18 +67,15 @@ function onMoveLine(dy){
 }
 
 function onDownloadMeme(elBtn){
-   const data = gCanvas.toDataURL();
-   elBtn.href = data;
-   elBtn.download = 'my-meme';
+downloadMeme(gCanvas, elBtn)
+}
+
+function onShareMeme() {
+   shareMeme(gCanvas);
 }
 
 function onSaveMeme(){
+   document.querySelector('.non-saved').style.display = 'none';
    appendMeme(gMeme);
    onNavClick('third');
 }
-
-// function onDownloadMeme(elBtn) {
-//    const data = gCanvas.toDataURL();
-//    elBtn.href = data;
-//    elBtn.download = 'my-canvas';
-// }

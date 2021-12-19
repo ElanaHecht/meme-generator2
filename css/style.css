@@ -93,9 +93,6 @@ h4 {
    background-color: transparent;
    border: transparent;
    color: #fff;
-}
-
-.btn-menu:hover {
    cursor: pointer;
 }
 
@@ -120,8 +117,18 @@ h4 {
    color: #fff;
 }
 
+.main-nav a.active {
+   color: black;
+}
+
+/* 
+a.active {
+   font-family: Montserrat Medium;
+   color: rgb(44, 44, 44);
+} */
+
 .main-nav a:hover {
-   color: #000;
+   color: rgb(44, 44, 44);
 }
 
 .main-nav .memes-link {
@@ -156,6 +163,10 @@ h4 {
    display: grid;
    gap: 10px 10px;
    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.gallery-grid img:hover {
+   opacity: 0.7;
 }
 
 .about-area {
@@ -226,10 +237,9 @@ h4 {
 }
 
 .controller-grid {
-   margin-right: 10px;
-   margin-top: 30px;
    height: 470px;
    width: 300px;
+   margin-top: 30px;
    display: grid;
    grid-template-rows: repeat(7, 1fr);
    grid-template-columns: repeat(5, 1fr);
@@ -248,7 +258,7 @@ h4 {
 .controller-grid button {
    cursor: pointer;
    border: transparent;
-   border-radius: 1em;
+   border-radius: .5em;
 }
 
 .controller-grid button:hover {
@@ -306,6 +316,7 @@ h4 {
 }
 
 select {
+   cursor: pointer;
    grid-column: 1/4;
    border: transparent;
    border-radius: .4rem;
@@ -315,60 +326,76 @@ select {
 }
 
 .color-fill {
+   position: relative;
    grid-column: 4/5;
    background-color: #fff;
 }
 
 .color-stroke {
+   position: relative;
    grid-column: 5/6;
    background-color: #fff;
 }
 
-
 #fill-color {
-   background: transparent;
-   border: none;
+   cursor: pointer;
+   padding: 10px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   opacity: 0;
+   position: absolute;
 }
 
 #stroke-color {
-   background: transparent;
-   border: none;
-}
-
-#fill-color:hover {
    cursor: pointer;
-}
-
-#stroke-color:hover {
-   cursor: pointer;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+   opacity: 0;
+   position: absolute;
 }
 
 .save {
    grid-row: 5;
-   grid-column: 2/5;
+   grid-column: 1/3;
    font-family: Montserrat Medium;
    font-size: 1.2em;
    background-color: #ff7f00;
    color: #fff;
    border: transparent;
-   border-radius: 0.5em;
+}
+
+.share {
+   grid-row: 5;
+   grid-column: 3/4;
+   font-family: Montserrat Medium;
+   font-size: 1.2em;
+   background-color: #ff7f00;
+   color: #fff;
+   border: transparent;
 }
 
 .download {
-   grid-row: 6;
-   grid-column: 2/5;
+   grid-row: 5;
+   grid-column: 4/6;
    font-family: Montserrat Medium;
    font-size: 1.2em;
    background-color: #ff7f00;
    color: #fff;
    border: transparent;
-   border-radius: 0.5em;
 }
 
 .download a {
    text-decoration: none;
    color: #fff;
    padding: 30px 5px;
+}
+
+.user-msg {
+   display: none;
 }
 
 /* MEMES */
@@ -380,6 +407,88 @@ select {
 .completed-memes canvas {
    max-width: 350px;
    border: 0.5px solid rgb(170, 170, 170);
+}
+
+.non-saved {
+   color: rgb(44, 44, 44);
+   display: block;
+}
+
+canvas:hover {
+   cursor: pointer;
+   box-shadow: 0px 5px 20px rgb(145, 144, 144);
+}
+
+#saved-modal {
+   display: none;
+   border-radius: 15px;
+   z-index: 1;
+   position: absolute;
+   margin: 0 auto;
+   background-color: #fff;
+   box-shadow: 0px 5px 20px rgb(145, 144, 144);
+   height: 250px;
+   width: 250px;
+}
+
+#saved-modal .close-button {
+   border: none;
+   padding: 0 220px;
+   text-decoration: none;
+   color: rgb(44, 44, 44);
+   background-color: transparent;
+   text-align: center;
+   font-size: 2em;
+   cursor: pointer;
+   white-space: nowrap
+}
+
+.modal-remove {
+   cursor: pointer;
+   background-color: #ff7f00;
+   margin-left: 50px;
+   color: #fff;
+   border-radius: 10px;
+   border: transparent;
+   font-family: Montserrat Medium;
+   font-size: 1.2em;
+   width: 150px;
+   height: 50px;
+   margin-bottom: 10px;
+}
+
+.modal-share {
+   cursor: pointer;
+   background-color: #ff7f00;
+   margin-left: 50px;
+   color: #fff;
+   border-radius: 10px;
+   border: transparent;
+   font-family: Montserrat Medium;
+   font-size: 1.2em;
+   width: 150px;
+   height: 50px;
+   margin-bottom: 10px;
+}
+
+.modal-download {
+   cursor: pointer;
+   background-color: #ff7f00;
+   margin-left: 50px;
+   color: #fff;
+   border-radius: 10px;
+   border: transparent;
+   width: 150px;
+   height: 50px;
+}
+
+.modal-download a {
+   font-family: Montserrat Medium;
+   font-size: 1.2em;
+   text-align: center;
+   text-decoration: none;
+   color: #fff;
+   padding: 30px 5px;
 }
 
 /* FOOTER */
@@ -510,9 +619,11 @@ body.menu-open .main-screen {
       display: flex;
       align-items: center;
       gap: 40px;
+      margin-top: 20px;
    }
 
    .controller-grid {
+      margin-top: 0;
       height: 350px;
       width: 350px;
       grid-template-rows: repeat(5, 1fr);
@@ -577,6 +688,7 @@ body.menu-open .main-screen {
    }
 
    .meme-generator {
+      margin-top: 40px;
       justify-content: space-between;
    }
 
@@ -589,7 +701,7 @@ body.menu-open .main-screen {
    }
 
    #input-text {
-      padding-left: 1.8em;
+      padding-left: 1em;
       font-size: 2em;
    }
 
